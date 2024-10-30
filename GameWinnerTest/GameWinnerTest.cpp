@@ -10,6 +10,7 @@ namespace GameWinnerTest
 	TEST_CLASS(GameWinnerTest)
 	{
 	public:
+		// Invalid Input Tests
 		TEST_METHOD(TestInvalidPlayer1)
 		{
 			const char* player1Input = "rock";// lowercase R in Rock invalid
@@ -76,6 +77,38 @@ namespace GameWinnerTest
 			Assert::AreEqual(expectedOutput, output);
 		}
 
+		// Game Draw Tests
+		TEST_METHOD(TestDrawWithRock)
+		{
+			const char* player1Input = "Rock";
+			const char* player2Input = "Rock";
 
+			const char* output = GetWinner(player1Input, player2Input);
+			const char* expectedOutput = "Draw";
+
+			Assert::AreEqual(expectedOutput, output);
+		}
+
+		TEST_METHOD(TestDrawWithPaper)
+		{
+			const char* player1Input = "Paper";
+			const char* player2Input = "Paper";
+
+			const char* output = GetWinner(player1Input, player2Input);
+			const char* expectedOutput = "Draw";
+
+			Assert::AreEqual(expectedOutput, output);
+		}
+
+		TEST_METHOD(TestDrawWithScissors)
+		{
+			const char* player1Input = "Scissors";
+			const char* player2Input = "Scissors";
+
+			const char* output = GetWinner(player1Input, player2Input);
+			const char* expectedOutput = "Draw";
+
+			Assert::AreEqual(expectedOutput, output);
+		}
 	};
 }
