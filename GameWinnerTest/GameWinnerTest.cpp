@@ -144,5 +144,39 @@ namespace GameWinnerTest
 
 			Assert::AreEqual(expectedOutput, output);
 		}
+
+		// Player 2 Win Tests
+		TEST_METHOD(TestPlayer2WinWithRock)
+		{
+			const char* player1Input = "Scissors";
+			const char* player2Input = "Rock";
+
+			const char* output = GetWinner(player1Input, player2Input);
+			const char* expectedOutput = "Player2";
+
+			Assert::AreEqual(expectedOutput, output);
+		}
+
+		TEST_METHOD(TestPlayer2WinWithPaper)
+		{
+			const char* player1Input = "Rock";
+			const char* player2Input = "Paper";
+
+			const char* output = GetWinner(player1Input, player2Input);
+			const char* expectedOutput = "Player2";
+
+			Assert::AreEqual(expectedOutput, output);
+		}
+
+		TEST_METHOD(TestPlayer2WinWithScissors)
+		{
+			const char* player1Input = "Paper";
+			const char* player2Input = "Scissors";
+
+			const char* output = GetWinner(player1Input, player2Input);
+			const char* expectedOutput = "Player2";
+
+			Assert::AreEqual(expectedOutput, output);
+		}
 	};
 }
